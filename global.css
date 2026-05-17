@@ -1,0 +1,304 @@
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css";
+
+@import "nativewind/theme";
+
+/* ============================================================
+   LINGUA DESIGN SYSTEM — THEME TOKENS
+   All CSS custom properties here generate NativeWind/Tailwind
+   utility classes automatically via the @theme directive.
+   ============================================================ */
+
+@theme {
+  /* --- Brand Colors --- */
+  /* bg-lingua-purple | text-lingua-purple | border-lingua-purple */
+  --color-lingua-purple: #6C4EF5;
+  --color-lingua-deep-purple: #5B3BF6;
+  --color-lingua-blue: #4D8BFF;
+  --color-lingua-green: #21C16B;
+
+  /* --- Semantic Colors --- */
+  /* bg-success | bg-warning | bg-streak | bg-error | bg-info */
+  --color-success: #21C16B;
+  --color-warning: #FFC800;
+  --color-streak: #FF8A00;
+  --color-error: #FF4D4F;
+  --color-info: #4D8BFF;
+
+  /* --- Neutral Colors --- */
+  /* text-foreground | text-muted | bg-surface | bg-background | border-border */
+  --color-foreground: #0D132B;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+  --color-surface: #F6F7FB;
+  --color-background: #FFFFFF;
+
+  /* --- Font Families --- */
+  /* font-sans (default) | font-poppins | font-poppins-medium | font-poppins-semibold | font-poppins-bold */
+  --font-family-sans: Poppins-Regular;
+  --font-family-poppins: Poppins-Regular;
+  --font-family-poppins-medium: Poppins-Medium;
+  --font-family-poppins-semibold: Poppins-SemiBold;
+  --font-family-poppins-bold: Poppins-Bold;
+
+  /* --- Type Scale (font size) --- */
+  /* text-h1 | text-h2 | text-h3 | text-h4 */
+  /* text-body-lg | text-body-md | text-body-sm | text-caption */
+  --text-h1: 32px;
+  --text-h2: 24px;
+  --text-h3: 20px;
+  --text-h4: 16px;
+  --text-body-lg: 16px;
+  --text-body-md: 14px;
+  --text-body-sm: 13px;
+  --text-caption: 11px;
+
+  /* --- Line Heights --- */
+  /* leading-tight-heading | leading-heading | leading-body | leading-caption */
+  --leading-tight-heading: 1.2;
+  --leading-heading: 1.3;
+  --leading-subheading: 1.4;
+  --leading-body: 1.6;
+  --leading-caption: 1.4;
+
+  /* --- Border Radius --- */
+  /* rounded-xs | rounded-sm | rounded-md | rounded-lg | rounded-xl | rounded-full */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* ============================================================
+   GLOBAL UTILITY CLASSES — BEM STYLE
+   Use these to compose common UI patterns without repeating
+   long className strings. Follow BEM: Block__Element--Modifier
+   ============================================================ */
+
+@layer utilities {
+
+  /* --- Typography --- */
+
+  .h1 {
+    font-family: Poppins-Bold;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+    color: #6C4EF5;
+  }
+
+  .h2 {
+    font-family: Poppins-SemiBold;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 600;
+    color: #0D132B;
+  }
+
+  .h3 {
+    font-family: Poppins-SemiBold;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    color: #0D132B;
+  }
+
+  .h4 {
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #0D132B;
+  }
+
+  .body-lg {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #0D132B;
+  }
+
+  .body-md {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #0D132B;
+  }
+
+  .body-sm {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #6B7280;
+  }
+
+  .caption {
+    font-family: Poppins-Regular;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: 400;
+    color: #6B7280;
+  }
+
+  .text-muted {
+    color: #6B7280;
+  }
+
+  /* --- Buttons --- */
+
+  .btn {
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .btn-primary {
+    background-color: #6C4EF5;
+  }
+
+  .btn-secondary {
+    background-color: #5B3BF6;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    border-width: 1.5px;
+    border-color: #6C4EF5;
+  }
+
+  .btn-success {
+    background-color: #21C16B;
+  }
+
+  .btn-label {
+    font-family: Poppins-SemiBold;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .btn-label-outline {
+    font-family: Poppins-SemiBold;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6C4EF5;
+  }
+
+  /* --- Cards --- */
+
+  .card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .card-elevated {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .card-surface {
+    background-color: #F6F7FB;
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .card-bordered {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    border-width: 1px;
+    border-color: #E5E7EB;
+    padding: 16px;
+  }
+
+  .card-title {
+    font-family: Poppins-SemiBold;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    color: #0D132B;
+  }
+
+  .card-subtitle {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #6B7280;
+  }
+
+  /* --- Badges --- */
+
+  .badge {
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .badge-success {
+    background-color: #21C16B;
+  }
+
+  .badge-warning {
+    background-color: #FFC800;
+  }
+
+  .badge-error {
+    background-color: #FF4D4F;
+  }
+
+  .badge-streak {
+    background-color: #FF8A00;
+  }
+
+  .badge-info {
+    background-color: #4D8BFF;
+  }
+
+  .badge-label {
+    font-family: Poppins-SemiBold;
+    font-size: 11px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  /* --- Screen Layout --- */
+
+  .screen {
+    flex: 1;
+    background-color: #FFFFFF;
+  }
+
+  .screen-surface {
+    flex: 1;
+    background-color: #F6F7FB;
+  }
+
+  .screen-header {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  .screen-content {
+    flex: 1;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
